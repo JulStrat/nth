@@ -22,4 +22,15 @@ def sieve_sundaram(n):
         for j in xrange(start, ub, 2*i+1):
             sieve[j] = 1
     return [2] + [2*i+1 for i in xrange(1, ub) if sieve[i] == 0]
-  
+
+def lprime_div(n):
+    size = n + 1
+    lpd = [i for i in xrange(size)]
+
+    for i in xrange(2, int(n**0.5)+1):
+        if lpd[i] == i:
+            for j in xrange(i*i, size, i):
+                if lpd[j] == j:            		
+                    lpd[j] = i
+
+    return lpd
