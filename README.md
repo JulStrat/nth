@@ -1,2 +1,2 @@
 # nth
-Number theory algorithms
+Number theory every day recipes with Python.
