@@ -10,17 +10,16 @@ def sieve_eratosthenes(n):
     return [i for i in xrange(2, size) if sieve[i] == 0]
 
 def sieve_sundaram(n):
-    size = n + 1
-    sieve = bytearray(size)
     ub = (n-1)//2 + 1
+    sieve = bytearray(ub)
     start = 0
-    
     for i in xrange(1, ub):
         start += 4*i
         if start >= ub:
             break
         for j in xrange(start, ub, 2*i+1):
             sieve[j] = 1
+
     return [2] + [2*i+1 for i in xrange(1, ub) if sieve[i] == 0]
 
 def totient(n):
