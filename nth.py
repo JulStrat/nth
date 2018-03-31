@@ -9,6 +9,19 @@ def sieve_eratosthenes(n):
 
     return [i for i in xrange(2, size) if sieve[i] == 0]
 
+def odd_sieve_eratosthenes(n):
+    ub = (n+n%2)//2
+    sieve = bytearray(ub)
+    start = 0
+
+    for i in xrange(1, int(n**0.5)//2+1):
+        start += 4*i
+        if sieve[i] == 0:
+            step = 2*i + 1
+            for j in xrange(start, ub, step):
+                sieve[j] = 1
+    return [2] + [2*i+1 for i in xrange(1, ub) if sieve[i] == 0]
+
 def sieve_sundaram(n):
     ub = (n-1)//2 + 1
     sieve = bytearray(ub)
