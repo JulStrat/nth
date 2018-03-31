@@ -9,3 +9,5 @@ http://www.spoj.com/problems/DIVFACT3/
 
 http://www.spoj.com/problems/EASYFACT/
 
+http://www.spoj.com/problems/NDIV/
+
