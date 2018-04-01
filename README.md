@@ -11,3 +11,7 @@ http://www.spoj.com/problems/EASYFACT/
 
 http://www.spoj.com/problems/NDIV/
 
+http://www.spoj.com/problems/HS08PAUL/
+
+
+
