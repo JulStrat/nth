@@ -13,5 +13,9 @@ http://www.spoj.com/problems/NDIV/
 
 http://www.spoj.com/problems/HS08PAUL/
 
+http://www.spoj.com/problems/TDKPRIME/
+
+
+
 
 
