@@ -5,6 +5,8 @@ Use cases:
 
 http://www.spoj.com/problems/PRIMEZUK/
 
+http://www.spoj.com/problems/DIVFACT2/
+
 http://www.spoj.com/problems/DIVFACT3/
 
 http://www.spoj.com/problems/EASYFACT/
