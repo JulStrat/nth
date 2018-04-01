@@ -15,6 +15,10 @@ http://www.spoj.com/problems/HS08PAUL/
 
 http://www.spoj.com/problems/TDKPRIME/
 
+http://www.spoj.com/problems/ETF/
+
+
+
 
 
 
