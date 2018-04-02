@@ -4,6 +4,8 @@ def sieve_eratosthenes(n):
 
     for i in xrange(2, int(n**0.5)+1):
         if sieve[i] == 0:
+            # for Python 2, 3
+            # sieve[i**2::i] = [1]*len(sieve[i**2::i])
             for j in xrange(i*i, size, i):
                 sieve[j] = 1
 
@@ -18,6 +20,8 @@ def odd_sieve_eratosthenes(n):
         start += 4*i
         if sieve[i] == 0:
             step = 2*i + 1
+            # for Python 2, 3
+            # sieve[start::step] = [1]*len(sieve[start::step])
             for j in xrange(start, ub, step):
                 sieve[j] = 1
     return [2] + [2*i+1 for i in xrange(1, ub) if sieve[i] == 0]
