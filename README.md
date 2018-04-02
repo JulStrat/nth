@@ -19,6 +19,10 @@ http://www.spoj.com/problems/TDKPRIME/
 
 http://www.spoj.com/problems/ETF/
 
+http://www.spoj.com/problems/PRIME12/
+
+
+
 
 
 
