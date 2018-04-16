@@ -14,17 +14,20 @@ def sieve_eratosthenes(n):
 def odd_sieve_eratosthenes(n):
     ub = (n+n%2)//2
     sieve = bytearray(ub)
-    start = 0
 
     for i in xrange(1, int(n**0.5)//2+1):
-        start += 4*i
         if sieve[i] == 0:
-            step = 2*i + 1
+            step = 2*i
+            start = step*(i+1)
+            step += 1
             # for Python 2, 3
             # sieve[start::step] = [1]*len(sieve[start::step])
             for j in xrange(start, ub, step):
                 sieve[j] = 1
-    return [2] + [2*i+1 for i in xrange(1, ub) if sieve[i] == 0]
+    if n > 1:
+        return [2] + [2*i+1 for i in xrange(1, ub) if sieve[i] == 0]
+    else:
+        return []    
 
 def sieve_sundaram(n):
     ub = (n-1)//2 + 1
