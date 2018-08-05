@@ -83,3 +83,29 @@ def lpd(n):
                 break
     return lp
 
+def mobius(n):
+    pr = []
+    sz = n + 1
+    lpd = [i for i in xrange(sz)]
+    mi = [-1 for i in xrange(sz)]
+    mi[1] = 1
+ 
+    for i in xrange(2, n//2+1):
+        cp = lpd[i]
+        if cp == i:
+            pr.append(i)
+        for p in pr:
+            j = i*p
+            if j > n:
+                break
+            lpd[j] = p
+ 
+            if p < cp:    
+                mi[j] = -mi[i]
+            else:
+                mi[j] = 0
+                break
+    return mi
+
+mi = mobius
+
