@@ -64,3 +64,22 @@ def lprime_div(n):
                     lpd[j] = i
 
     return lpd
+
+def lpd(n):
+    pr = []
+    sz = n + 1
+    lp = [i for i in xrange(sz)]
+ 
+    for i in xrange(2, n//2+1):
+        cp = lp[i]
+        if cp == i:
+            pr.append(i)
+        for p in pr:
+            j = i*p
+            if j > n:
+                break
+            lp[j] = p            
+            if p == cp:
+                break
+    return lp
+
