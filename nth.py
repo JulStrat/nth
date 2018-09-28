@@ -1,15 +1,20 @@
 def sieve_eratosthenes(n):
+    '''
+    Sieve of Eratosthenes
+    
+    https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+    '''
     size = n + 1
     sieve = bytearray(size)
-
-    for i in xrange(2, int(n**0.5)+1):
+    p = [2]
+    for i in xrange(3, int(n**0.5)+1, 2):
         if sieve[i] == 0:
             # for Python 2, 3
-            # sieve[i**2::i] = [1]*len(sieve[i**2::i])
-            for j in xrange(i*i, size, i):
+            # sieve[i*i::2*i] = [1]*len(sieve[i*i::2*i])
+            for j in xrange(i*i, size, 2*i):
                 sieve[j] = 1
 
-    return [i for i in xrange(2, size) if sieve[i] == 0]
+    return p + [i for i in xrange(3, size, 2) if sieve[i] == 0]
 
 def odd_sieve_eratosthenes(n):
     ub = (n+n%2)//2
@@ -30,6 +35,11 @@ def odd_sieve_eratosthenes(n):
         return []    
 
 def sieve_sundaram(n):
+    ''' 
+    Sieve of Sundaram
+    
+    https://en.wikipedia.org/wiki/Sieve_of_Sundaram
+    '''
     ub = (n-1)//2 + 1
     sieve = bytearray(ub)
     start = 0
@@ -37,6 +47,8 @@ def sieve_sundaram(n):
         start += 4*i
         if start >= ub:
             break
+        # for Python 2, 3
+        # sieve[start::2*i+1] = [1]*len(sieve[start::2*i+1])
         for j in xrange(start, ub, 2*i+1):
             sieve[j] = 1
 
