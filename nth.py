@@ -68,6 +68,7 @@ def totient(n):
 
 phi = totient
 
+'''
 def lprime_div(n):
     size = n + 1
     lpd = [i for i in xrange(size)]
@@ -79,3 +80,17 @@ def lprime_div(n):
                     lpd[j] = i
 
     return lpd
+'''
+
+def least_prime_factor(n):
+    size = n + 1
+    lpf = [i for i in xrange(size)]
+    for i in xrange(2, size, 2):
+        lpf[i] = 2
+
+    for i in xrange(3, int(n**0.5)+1, 2):
+        if lpf[i] == i:
+            for j in xrange(i*i, size, 2*i):
+                if lpf[j] == j:
+                    lpf[j] = i
+    return lpf
