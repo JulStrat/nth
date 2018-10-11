@@ -1,3 +1,10 @@
+__NUMPY__ = True
+try:
+    import numpy as np
+except ImportError:
+    __NUMPY__ = False
+    pass
+
 def sieve_eratosthenes(n):
     '''
     Sieve of Eratosthenes
@@ -15,6 +22,24 @@ def sieve_eratosthenes(n):
                 sieve[j] = 1
 
     return p + [i for i in xrange(3, size, 2) if sieve[i] == 0]
+
+def sieve_eratosthenes_np(n):
+    '''
+    Sieve of Eratosthenes
+    
+    https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+    '''
+    size = n + 1
+    sieve = np.ones(size, dtype=np.bool)
+    # sieve[0] = False
+    # sieve[1] = False
+    
+    for i in xrange(3, int(n**0.5)+1, 2):
+        if sieve[i]:
+            sieve[i*i::2*i] = False
+
+    return np.r_[2, 2*np.flatnonzero(sieve[3::2]) + 3]
+
 
 def odd_sieve_eratosthenes(n):
     ub = (n+n%2)//2
