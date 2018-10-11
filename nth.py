@@ -1,9 +1,15 @@
 __NUMPY__ = True
+__PYPY__ = True
+
 try:
     import numpy as np
 except ImportError:
     __NUMPY__ = False
-    pass
+
+import platform
+if platform.python_implementation() != "PyPy":
+    __PYPY__ = False
+from itertools import repeat    
 
 def sieve_eratosthenes(n):
     '''
@@ -13,15 +19,16 @@ def sieve_eratosthenes(n):
     '''
     size = n + 1
     sieve = bytearray(size)
-    p = [2]
+
     for i in xrange(3, int(n**0.5)+1, 2):
         if sieve[i] == 0:
             # for Python 2, 3
             # sieve[i*i::2*i] = [1]*len(sieve[i*i::2*i])
+            # sieve[i*i::2*i] = repeat(1, len(sieve[i*i::2*i]))            
             for j in xrange(i*i, size, 2*i):
                 sieve[j] = 1
 
-    return p + [i for i in xrange(3, size, 2) if sieve[i] == 0]
+    return [2] + [i for i in xrange(3, size, 2) if sieve[i] == 0]
 
 def sieve_eratosthenes_np(n):
     '''
