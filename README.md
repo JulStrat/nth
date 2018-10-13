@@ -23,6 +23,8 @@ http://www.spoj.com/problems/ETF/
 
 http://www.spoj.com/problems/PRIME12/
 
+https://www.spoj.com/problems/PRINT/
+
 https://www.spoj.com/problems/PRIME1/
 
 
