@@ -3,6 +3,8 @@ Number theory every day recipes with Python.
 
 Use cases:
 
+https://www.spoj.com/problems/SAS003/
+
 https://www.spoj.com/problems/CKEWLK/
 
 http://www.spoj.com/problems/PRIMEZUK/
