@@ -108,7 +108,7 @@ def lprime_div(n):
     for i in xrange(2, int(n**0.5)+1):
         if lpd[i] == i:
             for j in xrange(i*i, size, i):
-                if lpd[j] == j:            		
+                if lpd[j] == j:                 
                     lpd[j] = i
 
     return lpd
